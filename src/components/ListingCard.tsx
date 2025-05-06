@@ -1,19 +1,9 @@
-
 import { Heart } from "lucide-react";
 import { Link } from "react-router-dom";
+import type { Listing } from "@/lib/supabase";
+import { formatDistanceToNow } from "date-fns";
 
-export interface ListingProps {
-  id: string;
-  title: string;
-  price: number;
-  year: number;
-  make: string;
-  model: string;
-  mileage: number;
-  location: string;
-  postedTime: string;
-  imageUrl: string;
-}
+export type ListingCardProps = Listing;
 
 const ListingCard = ({
   id,
@@ -24,15 +14,17 @@ const ListingCard = ({
   model,
   mileage,
   location,
-  postedTime,
-  imageUrl,
-}: ListingProps) => {
+  created_at,
+  image_url,
+}: ListingCardProps) => {
+  const postedTime = formatDistanceToNow(new Date(created_at), { addSuffix: true });
+
   return (
     <Link to={`/listing/${id}`}>
       <div className="listing-card overflow-hidden">
         <div className="relative">
           <img
-            src={imageUrl}
+            src={image_url}
             alt={`${year} ${make} ${model}`}
             className="h-48 w-full object-cover"
           />

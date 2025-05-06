@@ -1,4 +1,3 @@
-
 import { Search, Bell, MessageCircle, User, Plus } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -10,7 +9,7 @@ const Navbar = () => {
       <div className="container mx-auto px-4 flex items-center justify-between h-16">
         <div className="flex items-center">
           <Link to="/" className="flex items-center">
-            <h1 className="text-marketplace-blue text-2xl font-bold mr-4">DriveMarket</h1>
+            <h1 className="text-marketplace-blue text-2xl font-bold mr-4">MarketplaceBookFace</h1>
           </Link>
           <div className="hidden md:flex relative w-96">
             <Search className="absolute left-3 top-2.5 h-5 w-5 text-gray-400" />
